@@ -1,0 +1,14 @@
+header .cointainer{
+    background-color: rgb(220, 184, 140);
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+  }
+  
+  .navspan{
+      margin-right: 20px;
+  }
+  
+  .cointainer-nav{
+      margin-top: 10px;
+  }

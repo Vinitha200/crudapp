@@ -1,12 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
-import MainPage from '../src/ParticeProject/index'
+import MainPage from './components';
 
 
 function App() {
   return (
     <div className="App">
-      CRUD APP
+     <MainPage/>
     </div>
   );
 }

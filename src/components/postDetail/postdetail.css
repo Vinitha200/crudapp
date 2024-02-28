@@ -1,0 +1,27 @@
+.postdetail-container{
+    margin: 20px;
+}
+
+.state-title{
+  display: flex;
+}
+
+.state-body{
+    display: flex;
+}
+
+.delete-post{
+margin-right: 10px;
+background: red
+}
+
+.edit-post{
+    margin-right: 10px;
+    background: rgb(220, 184, 140);
+    }
+    
+.button-container{
+    display: flex;
+    justify-content: flex-end;
+    margin: 50px;
+}

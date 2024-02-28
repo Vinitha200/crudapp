@@ -1,0 +1,38 @@
+.post-main{
+    border: 1px solid black;
+    margin: 18px;
+    border-radius: 5px;
+}
+
+.post-title{
+    background-color: rgb(234 215 193);
+    padding: 10px;
+    display:flex;
+    justify-content:space-between;
+    margin:20px 20px 0px 20px;
+    
+}
+
+.post-div{
+    cursor: pointer;
+}
+
+.post-body{
+    background: rgb(220, 184, 140);
+    padding: 10px;
+    margin:0px 20px 0px 20px
+}
+
+.search-div{
+    margin: 10px 10px 10px 26px;
+    /* float: left; */
+    display: flex;
+    justify-content: space-between;
+}
+
+.sort{
+    background: #DCB88C;
+    border: 1px solid #DCB88C;
+    margin: 2px;
+    cursor: pointer;
+}

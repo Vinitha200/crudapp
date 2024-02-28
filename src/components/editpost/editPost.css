@@ -1,0 +1,15 @@
+.createpost-container{
+    display: flex;
+}
+
+.create-title{
+  float: left;
+}
+
+.create-content{
+    float: left;
+}
+
+.create-form{
+    margin: 0px 20px 20px 100px;
+}
