@@ -5,30 +5,32 @@ import { Input } from 'antd'
 import { SortAscendingOutlined,SortDescendingOutlined } from '@ant-design/icons'
 
 function Home() {
-//   const { data: postData, error, isLoading } = useFetch("https://jsonplaceholder.typicode.com/posts")
-  const [postData,setPostData] = useState([])
+  const { data: postData, error, isLoading } = useFetch("https://jsonplaceholder.typicode.com/posts")
+//   const [postData,setPostData] = useState([])
   
   const [filter, setFilter] = useState([])
   const [sort, setSort] = useState([])
+  const [searchTerm,setSearchTerm]=useState('')
 
-  const getAll = async ()=>{
-    try{
-      const res = await fetch('https://jsonplaceholder.typicode.com/posts')
-      .then(res=>res.json())
-      .then(data=> setPostData(data))
-    }
-    catch(err){
-      console.log("error", err)
-    }
+//   const getAll = async ()=>{
+//     try{
+//       const res = await fetch('https://jsonplaceholder.typicode.com/posts')
+//       .then(res=>res.json())
+//       .then(data=> setPostData(data))
+//     }
+//     catch(err){
+//       console.log("error", err)
+//     }
 
-  }
+//   }
 
-  useEffect(()=>{
-    getAll()
-  },[]) 
+//   useEffect(()=>{
+//     getAll()
+//   },[]) 
 
   const handleSearch = (e) => {
     const searchTerm = e?.target?.value?.trim()
+    setSearchTerm(searchTerm)
     console.log(searchTerm)
     if (searchTerm.length > 0) {
 
@@ -45,6 +47,7 @@ function Home() {
         )
       });
       console.log("filterData", filterData)
+      
       setFilter(filterData)
     }
     else {
@@ -68,7 +71,7 @@ function Home() {
   console.log("filterData", sort)
   return (
     <>
-      {/* {isLoading && <h3>Loading</h3>} */}
+      {isLoading && <h3>Loading</h3>}
       <div style={{ display: "flex", flexDirection: "column" }}>
         <div className='search-div'>
           <Input
@@ -87,7 +90,7 @@ function Home() {
 
 
         <div>
-          {(filter.length > 0 ? filter : (sort.length > 0 ? sort : postData)).map((item) => (
+          {(searchTerm.length > 0 ? filter : (sort.length > 0 ? sort : postData)).map((item) => (
             <Post post={item} key={item?.id}></Post>
           ))}
         </div>
